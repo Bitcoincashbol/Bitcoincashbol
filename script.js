@@ -1,4 +1,4 @@
-const URL_API = "https://script.google.com/macros/s/AKfycbwN046RozPx8CzDcoWv4G83S6ysjvgqq6ey-KLYH1CaEAPU6VD-sEJLpC20KJ0g5GFP/exec";
+Const URL_API = "https://script.google.com/macros/s/AKfycbwN046RozPx8CzDcoWv4G83S6ysjvgqq6ey-KLYH1CaEAPU6VD-sEJLpC20KJ0g5GFP/exec";
 
 function showRegister() {
     document.getElementById('login-form').style.display = 'none';
@@ -16,4 +16,27 @@ function register() {
 
 async function login() {
     const t = document.getElementById('tel').value;
-    const p =
+    const p = document.getElementById('pass').value;
+    const res = await fetch(URL_API);
+    const data = await res.json();
+    const user = data.find(f => f[2] == t && f[3] == p);
+
+    if (user) {
+        document.getElementById('login-form').style.display = 'none';
+        document.getElementById('menu-principal').style.display = 'block';
+        document.getElementById('nombreUsuario').innerText = "Hola, " + user[0];
+        const saldoUSD = user[4] || 0;
+        document.getElementById('usdDisplay').innerText = "$" + parseFloat(saldoUSD).toFixed(2) + " USD";
+        document.getElementById('bobDisplay').innerText = "Bs." + (saldoUSD * 6.96).toFixed(2) + " BOB";
+    } else { alert("Datos incorrectos."); }
+}
+
+function abrirAgregarSaldo() {
+    document.getElementById('menu-principal').style.display = 'none';
+    document.getElementById('agregar-saldo').style.display = 'block';
+}
+
+function regresarAlMenu() {
+    document.getElementById('agregar-saldo').style.display = 'none';
+    document.getElementById('menu-principal').style.display = 'block';
+}
