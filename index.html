@@ -2,23 +2,24 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Bitcoin Cash Bol | Trading Seguro</title>
+    <title>Bitcoin Cash Bol</title>
 </head>
 <body>
     <div id="app">
-        <img src="URL_DE_TU_LOGO" alt="Logo" class="logo">
+        <img src="1781111677225.png" alt="Logo Bitcoin Cash Bol" class="logo">
         
         <div id="login-form" class="card">
-            <h1>Bienvenido</h1>
+            <h1>Iniciar Sesión</h1>
             <input type="text" id="tel" placeholder="Número de celular">
             <input type="password" id="pass" placeholder="Contraseña">
             <button onclick="login()" class="btn-primary">Ingresar</button>
-            <p onclick="showRegister()" style="cursor:pointer; color:#0056b3;">¿No tienes cuenta? Regístrate</p>
+            <p onclick="showRegister()" class="link-text">¿No tienes cuenta? Regístrate aquí</p>
         </div>
 
         <div id="register-form" class="card" style="display:none;">
-            <h2>Crear Cuenta</h2>
+            <h2>Registro</h2>
             <input type="text" id="reg-nombre" placeholder="Nombre">
             <input type="text" id="reg-apellido" placeholder="Apellidos">
             <input type="text" id="reg-tel" placeholder="Celular">
@@ -27,7 +28,8 @@
         </div>
 
         <div id="menu-principal" class="card" style="display:none;">
-            <h1>Saldo: 0.00 BTC</h1>
+            <p>Tu Saldo</p>
+            <h1>0.00 BTC</h1>
             <div class="grid-menu">
                 <button>Agregar Saldo</button>
                 <button>Retirar Fondos</button>
