@@ -1,40 +1,37 @@
-const URL_API = "https://script.google.com/macros/s/AKfycbyKSz2l-mpQF9xWkILNUN2IS504QKW0bcHlk6y_SkOMIqTndRQBRKXYaQCI1pPtRRrX/exec";
+const URL_API = "https://script.google.com/macros/s/AKfycbzkE5xqFYH7XOB8A90rCPO7YlPbPr1ZCArir764MEegIyR0Q2-VMYb7BTdDFmaAu-6G/exec";
 
 function register() {
-    const data = {
-        nombre: document.getElementById('reg-nombre').value,
-        apellidos: document.getElementById('reg-apellido').value,
-        telefono: document.getElementById('reg-tel').value,
-        password: document.getElementById('reg-pass').value
-    };
+    // Obtenemos los valores de los inputs
+    const nombre = document.getElementById('reg-nombre').value;
+    const apellidos = document.getElementById('reg-apellido').value;
+    const telefono = document.getElementById('reg-tel').value;
+    const password = document.getElementById('reg-pass').value;
 
-    // Validación
-    if(!data.nombre || !data.telefono || !data.password) {
-        alert("Por favor, llena todos los campos obligatorios.");
+    if (!nombre || !telefono || !password) {
+        alert("Por favor, completa los campos requeridos.");
         return;
     }
 
-    // Enviamos los datos
+    // Preparamos los datos
+    const formData = new FormData();
+    formData.append('nombre', nombre);
+    formData.append('apellidos', apellidos);
+    formData.append('telefono', telefono);
+    formData.append('password', password);
+
+    // Enviamos
     fetch(URL_API, {
         method: 'POST',
-        mode: 'no-cors',
-        body: new URLSearchParams(data)
+        body: formData
     })
-    .then(() => {
-        alert("¡Registro exitoso! Tus datos han sido enviados.");
-        location.reload(); 
+    .then(response => response.text())
+    .then(data => {
+        alert("¡Registro exitoso! Datos guardados.");
+        location.reload();
     })
     .catch(error => {
         console.error("Error:", error);
-        alert("Hubo un error al conectar con la base de datos.");
+        alert("Hubo un error al conectar. Revisa la consola (F12).");
     });
 }
 
-function showRegister() {
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('register-form').style.display = 'block';
-}
-
-function login() {
-    alert("Función de inicio de sesión en desarrollo.");
-}
