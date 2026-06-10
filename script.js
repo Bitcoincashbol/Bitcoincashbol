@@ -1,37 +1,23 @@
-const URL_API = "https://script.google.com/macros/s/AKfycbzkE5xqFYH7XOB8A90rCPO7YlPbPr1ZCArir764MEegIyR0Q2-VMYb7BTdDFmaAu-6G/exec";
+const URL_API = "https://script.google.com/macros/s/AKfycbzfGLlQmqYfh24BvPqC5ZFKoWba8DlwiIP8IQsTdyyxXiEzhbnimvtz501rwcr0i3yL/exec";
 
 function register() {
-    // Obtenemos los valores de los inputs
-    const nombre = document.getElementById('reg-nombre').value;
-    const apellidos = document.getElementById('reg-apellido').value;
-    const telefono = document.getElementById('reg-tel').value;
-    const password = document.getElementById('reg-pass').value;
+    const data = new URLSearchParams();
+    data.append('nombre', document.getElementById('reg-nombre').value);
+    data.append('apellidos', document.getElementById('reg-apellido').value);
+    data.append('telefono', document.getElementById('reg-tel').value);
+    data.append('password', document.getElementById('reg-pass').value);
 
-    if (!nombre || !telefono || !password) {
-        alert("Por favor, completa los campos requeridos.");
-        return;
-    }
-
-    // Preparamos los datos
-    const formData = new FormData();
-    formData.append('nombre', nombre);
-    formData.append('apellidos', apellidos);
-    formData.append('telefono', telefono);
-    formData.append('password', password);
-
-    // Enviamos
     fetch(URL_API, {
         method: 'POST',
-        body: formData
+        body: data
     })
-    .then(response => response.text())
+    .then(res => res.text())
     .then(data => {
-        alert("¡Registro exitoso! Datos guardados.");
+        alert("¡Registro exitoso! Los datos se enviaron a la hoja.");
         location.reload();
     })
-    .catch(error => {
-        console.error("Error:", error);
-        alert("Hubo un error al conectar. Revisa la consola (F12).");
+    .catch(err => {
+        console.error(err);
+        alert("Error al enviar. Revisa la consola (F12).");
     });
 }
-
