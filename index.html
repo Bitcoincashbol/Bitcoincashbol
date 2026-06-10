@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitcoin Cash Bol - Inicio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div id="login-form">
+            <h1>Bitcoin Cash Bol</h1>
+            <input type="text" id="tel" placeholder="Número de celular">
+            <input type="password" id="pass" placeholder="Contraseña">
+            <button onclick="login()">Ingresar</button>
+            <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
+        </div>
+
+        <div id="register-form" style="display:none;">
+            <h2>Registro de Usuario</h2>
+            <input type="text" id="reg-nombre" placeholder="Nombre">
+            <input type="text" id="reg-apellido" placeholder="Apellidos">
+            <input type="text" id="reg-tel" placeholder="Número de celular">
+            <input type="password" id="reg-pass" placeholder="Contraseña">
+            <button onclick="register()">Registrarse</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
