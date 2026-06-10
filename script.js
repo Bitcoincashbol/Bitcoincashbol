@@ -1,4 +1,4 @@
-Const URL_API = "https://script.google.com/macros/s/AKfycbwN046RozPx8CzDcoWv4G83S6ysjvgqq6ey-KLYH1CaEAPU6VD-sEJLpC20KJ0g5GFP/exec";
+const URL_API = "https://script.google.com/macros/s/AKfycbwN046RozPx8CzDcoWv4G83S6ysjvgqq6ey-KLYH1CaEAPU6VD-sEJLpC20KJ0g5GFP/exec";
 
 function showRegister() {
     document.getElementById('login-form').style.display = 'none';
@@ -23,7 +23,13 @@ async function login() {
 
     if (user) {
         document.getElementById('login-form').style.display = 'none';
+        document.getElementById('register-form').style.display = 'none';
+        // --- MODIFICACIÓN AQUÍ ---
+        // Forzamos la ocultación de la vista de saldo al entrar al menú
+        document.getElementById('agregar-saldo').style.display = 'none'; 
+        // -------------------------
         document.getElementById('menu-principal').style.display = 'block';
+        
         document.getElementById('nombreUsuario').innerText = "Hola, " + user[0];
         const saldoUSD = user[4] || 0;
         document.getElementById('usdDisplay').innerText = "$" + parseFloat(saldoUSD).toFixed(2) + " USD";
