@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
-    <title>Bitcoin Cash Bol</title>
+    <title>Bitcoin Cash Bol | Trading Seguro</title>
 </head>
 <body>
-    <div class="container" id="login-form">
-        <h1>Bitcoin Cash Bol</h1>
-        <input type="text" id="tel" placeholder="Número de celular">
-        <input type="password" id="pass" placeholder="Contraseña">
-        <button onclick="login()">Ingresar</button>
-        <p>¿No tienes cuenta? <a href="#" onclick="showRegister()">Regístrate aquí</a></p>
-    </div>
+    <div id="app">
+        <img src="URL_DE_TU_LOGO" alt="Logo" class="logo">
+        
+        <div id="login-form" class="card">
+            <h1>Bienvenido</h1>
+            <input type="text" id="tel" placeholder="Número de celular">
+            <input type="password" id="pass" placeholder="Contraseña">
+            <button onclick="login()" class="btn-primary">Ingresar</button>
+            <p onclick="showRegister()" style="cursor:pointer; color:#0056b3;">¿No tienes cuenta? Regístrate</p>
+        </div>
 
-    <div class="container" id="register-form" style="display:none;">
-        <h2>Registro</h2>
-        <input type="text" id="reg-nombre" placeholder="Nombre">
-        <input type="text" id="reg-apellido" placeholder="Apellidos">
-        <input type="text" id="reg-tel" placeholder="Número de celular">
-        <input type="password" id="reg-pass" placeholder="Contraseña">
-        <button onclick="register()">Registrarse</button>
-        <p><a href="#" onclick="location.reload()">Volver al Login</a></p>
+        <div id="register-form" class="card" style="display:none;">
+            <h2>Crear Cuenta</h2>
+            <input type="text" id="reg-nombre" placeholder="Nombre">
+            <input type="text" id="reg-apellido" placeholder="Apellidos">
+            <input type="text" id="reg-tel" placeholder="Celular">
+            <input type="password" id="reg-pass" placeholder="Contraseña">
+            <button onclick="register()" class="btn-primary">Registrarse</button>
+        </div>
+
+        <div id="menu-principal" class="card" style="display:none;">
+            <h1>Saldo: 0.00 BTC</h1>
+            <div class="grid-menu">
+                <button>Agregar Saldo</button>
+                <button>Retirar Fondos</button>
+                <button>Abrir Gráfico</button>
+                <button>Ayuda</button>
+            </div>
+            <button onclick="location.reload()" class="btn-secondary">Cerrar Sesión</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
