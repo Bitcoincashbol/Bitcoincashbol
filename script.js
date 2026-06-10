@@ -1,5 +1,5 @@
 const URL_API = "https://script.google.com/macros/s/AKfycbwN046RozPx8CzDcoWv4G83S6ysjvgqq6ey-KLYH1CaEAPU6VD-sEJLpC20KJ0g5GFP/exec";
-const TASA_CAMBIO = 6.96; // Puedes actualizar esto a tiempo real
+const TASA_CAMBIO = 9.89; // Puedes actualizar esto a tiempo real
 
 async function login() {
     const t = document.getElementById('tel').value;
