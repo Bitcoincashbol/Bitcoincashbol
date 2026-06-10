@@ -1,10 +1,11 @@
-body { font-family: 'Arial', sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
-.card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 350px; text-align: center; }
-.logo { width: 150px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
-input { width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #e1e1e1; border-radius: 12px; box-sizing: border-box; font-size: 16px; }
-.btn-primary { width: 100%; padding: 15px; background: #002d5b; color: white; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 10px; }
-.btn-secondary { background: none; color: #777; border: none; margin-top: 20px; cursor: pointer; }
-.grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-.grid-menu button { padding: 20px 10px; background: #f7931a; border: none; border-radius: 15px; color: white; font-weight: bold; cursor: pointer; }
-h1 { font-size: 24px; color: #333; }
-.link-text { color: #0056b3; cursor: pointer; margin-top: 15px; font-size: 14px; }
+body { font-family: sans-serif; background: #f0f2f5; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+.card { background: white; padding: 30px; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); width: 90%; max-width: 350px; text-align: center; }
+.logo { width: 100px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; }
+input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+.btn-primary { width: 100%; padding: 12px; background: #f7931a; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.balance-box { background: #f9f9f9; padding: 15px; border-radius: 10px; margin: 15px 0; }
+.grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.grid-menu button { padding: 10px; border: 1px solid #ddd; background: white; border-radius: 5px; cursor: pointer; }
+.btn-secondary { background: none; color: #888; border: none; margin-top: 20px; cursor: pointer; }
+.link-text { color: #555; cursor: pointer; text-decoration: underline; font-size: 14px; margin-top: 15px; }
+.text-bob { color: #28a745; font-weight: bold; }
