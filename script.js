@@ -38,3 +38,17 @@ async function login() {
         alert("Número o contraseña incorrectos.");
     }
 }
+
+// --- NUEVAS FUNCIONES PARA NAVEGACIÓN ---
+
+function abrirAgregarSaldo() {
+    // Oculta el menú principal y muestra la ventana de agregar saldo
+    document.getElementById('menu-principal').style.display = 'none';
+    document.getElementById('agregar-saldo').style.display = 'block';
+}
+
+function regresarAlMenu() {
+    // Oculta agregar saldo y vuelve al menú
+    document.getElementById('agregar-saldo').style.display = 'none';
+    document.getElementById('menu-principal').style.display = 'block';
+}
