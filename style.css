@@ -1,7 +1,10 @@
-body { font-family: 'Segoe UI', sans-serif; background: #eef2f5; display: flex; justify-content: center; padding: 20px; }
-.card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 100%; max-width: 400px; text-align: center; }
-.logo { width: 120px; margin-bottom: 20px; }
-input { width: 100%; padding: 12px; margin: 8px 0; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
-.btn-primary { width: 100%; padding: 12px; background: #002d5b; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
-.grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-.grid-menu button { padding: 15px; background: #f7931a; border: none; border-radius: 8px; color: white; }
+body { font-family: 'Arial', sans-serif; background: #f0f2f5; margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+.card { background: white; padding: 25px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 350px; text-align: center; }
+.logo { width: 150px; margin-bottom: 20px; display: block; margin-left: auto; margin-right: auto; }
+input { width: 100%; padding: 15px; margin: 10px 0; border: 2px solid #e1e1e1; border-radius: 12px; box-sizing: border-box; font-size: 16px; }
+.btn-primary { width: 100%; padding: 15px; background: #002d5b; color: white; border: none; border-radius: 12px; font-weight: bold; font-size: 16px; margin-top: 10px; }
+.btn-secondary { background: none; color: #777; border: none; margin-top: 20px; cursor: pointer; }
+.grid-menu { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+.grid-menu button { padding: 20px 10px; background: #f7931a; border: none; border-radius: 15px; color: white; font-weight: bold; cursor: pointer; }
+h1 { font-size: 24px; color: #333; }
+.link-text { color: #0056b3; cursor: pointer; margin-top: 15px; font-size: 14px; }
