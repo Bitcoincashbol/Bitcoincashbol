@@ -11,9 +11,7 @@ function register() {
     d.append('apellidos', document.getElementById('reg-apellido').value);
     d.append('telefono', document.getElementById('reg-tel').value);
     d.append('password', document.getElementById('reg-pass').value);
-
-    fetch(URL_API, { method: 'POST', body: d })
-    .then(() => { alert("¡Registro exitoso!"); location.reload(); });
+    fetch(URL_API, { method: 'POST', body: d }).then(() => { alert("Registro exitoso!"); location.reload(); });
 }
 
 async function login() {
@@ -21,34 +19,24 @@ async function login() {
     const p = document.getElementById('pass').value;
     const res = await fetch(URL_API);
     const data = await res.json();
-    
-    // Validar usuario
     const user = data.find(f => f[2] == t && f[3] == p);
 
     if (user) {
         document.getElementById('login-form').style.display = 'none';
-        document.getElementById('register-form').style.display = 'none';
         document.getElementById('menu-principal').style.display = 'block';
-        
         document.getElementById('nombreUsuario').innerText = "Hola, " + user[0];
         const saldoUSD = user[4] || 0;
         document.getElementById('usdDisplay').innerText = "$" + parseFloat(saldoUSD).toFixed(2) + " USD";
         document.getElementById('bobDisplay').innerText = "Bs." + (saldoUSD * 6.96).toFixed(2) + " BOB";
-    } else {
-        alert("Número o contraseña incorrectos.");
-    }
+    } else { alert("Datos incorrectos."); }
 }
 
-// --- NUEVAS FUNCIONES PARA NAVEGACIÓN ---
-
 function abrirAgregarSaldo() {
-    // Oculta el menú principal y muestra la ventana de agregar saldo
     document.getElementById('menu-principal').style.display = 'none';
     document.getElementById('agregar-saldo').style.display = 'block';
 }
 
 function regresarAlMenu() {
-    // Oculta agregar saldo y vuelve al menú
     document.getElementById('agregar-saldo').style.display = 'none';
     document.getElementById('menu-principal').style.display = 'block';
 }
