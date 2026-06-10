@@ -1,12 +1,5 @@
-const URL_API = "https://script.google.com/macros/s/AKfycbxeZS36wv37XevS2NoBfpQ8Y3LdsEym51-J3rYU90YXQkL91ufPgkfNZTzFNYNHGLUY5g/exec";
+const URL_API = "https://script.google.com/macros/s/AKfycbyKSz2l-mpQF9xWkILNUN2IS504QKW0bcHlk6y_SkOMIqTndRQBRKXYaQCI1pPtRRrX/exec";
 
-// Función para mostrar el formulario de registro
-function showRegister() {
-    document.getElementById('login-form').style.display = 'none';
-    document.getElementById('register-form').style.display = 'block';
-}
-
-// Función para enviar los datos a Google Sheets
 function register() {
     const data = {
         nombre: document.getElementById('reg-nombre').value,
@@ -15,25 +8,33 @@ function register() {
         password: document.getElementById('reg-pass').value
     };
 
-    // Validación básica
+    // Validación
     if(!data.nombre || !data.telefono || !data.password) {
         alert("Por favor, llena todos los campos obligatorios.");
         return;
     }
 
+    // Enviamos los datos
     fetch(URL_API, {
         method: 'POST',
         mode: 'no-cors',
         body: new URLSearchParams(data)
     })
     .then(() => {
-        alert("¡Registro exitoso! Ya puedes iniciar sesión.");
-        location.reload(); // Recarga para volver al login
+        alert("¡Registro exitoso! Tus datos han sido enviados.");
+        location.reload(); 
     })
-    .catch(error => alert("Hubo un error: " + error));
+    .catch(error => {
+        console.error("Error:", error);
+        alert("Hubo un error al conectar con la base de datos.");
+    });
+}
+
+function showRegister() {
+    document.getElementById('login-form').style.display = 'none';
+    document.getElementById('register-form').style.display = 'block';
 }
 
 function login() {
-    // Aquí puedes añadir lógica de validación futura
     alert("Función de inicio de sesión en desarrollo.");
 }
