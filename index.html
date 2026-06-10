@@ -30,7 +30,7 @@
             <p onclick="location.reload()" class="link-text">Volver al Login</p>
         </div>
 
-        <!-- Menú -->
+        <!-- Menú Principal -->
         <div id="menu-principal" class="card" style="display:none;">
             <img src="1781111677225.png" class="logo">
             <h1 id="nombreUsuario">Hola</h1>
@@ -40,15 +40,27 @@
                 <p id="bobDisplay" class="text-bob">Bs.0.00 BOB</p>
             </div>
             <div class="grid-menu">
-                <button>Agregar Saldo</button>
+                <!-- Se agregó el onclick aquí -->
+                <button onclick="abrirAgregarSaldo()">Agregar Saldo</button>
                 <button>Retirar Fondos</button>
                 <button>Ver Gráficos</button>
                 <button>Ayuda</button>
             </div>
             <button onclick="location.reload()" class="btn-secondary">Cerrar Sesión</button>
         </div>
+
+        <!-- Vista Agregar Saldo (Nueva sección) -->
+        <div id="agregar-saldo" class="card" style="display:none;">
+            <img src="1781111677225.png" class="logo">
+            <h2>AGREGAR FONDOS</h2>
+            <p>Escanea tu código QR para procesar la inversión.</p>
+            <div class="qr-container">
+                <img src="URL_DE_TU_QR.png" alt="QR Bitcoin" class="qr-code">
+            </div>
+            <button class="btn-primary" style="margin-top:15px;">RED BITCOIN (BTC)</button>
+            <button onclick="regresarAlMenu()" class="btn-secondary">← Volver al Menú</button>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
-
