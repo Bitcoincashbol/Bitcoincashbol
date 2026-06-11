@@ -33,7 +33,7 @@ async function login() {
         document.getElementById('nombreUsuario').innerText = "Hola, " + user[0];
         const saldoUSD = user[4] || 0;
         document.getElementById('usdDisplay').innerText = "$" + parseFloat(saldoUSD).toFixed(2) + " USD";
-        document.getElementById('bobDisplay').innerText = "Bs." + (saldoUSD * 6.96).toFixed(2) + " BOB";
+        document.getElementById('bobDisplay').innerText = "Bs." + (saldoUSD * 9.90).toFixed(2) + " BOB";
     } else { alert("Datos incorrectos."); }
 }
 
