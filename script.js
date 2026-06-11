@@ -59,3 +59,11 @@ function enviarWhatsApp() {
 function abrirGraficos() {
     window.open("https://es.tradingview.com/chart/bOWsNnsG/", "_blank");
 }
+
+function enviarAyuda() {
+    const nombre = document.getElementById('nombreUsuario').innerText;
+    const telefono = "59177827866";
+    const mensaje = "Hola, soy " + nombre + ". Necesito ayuda con mi cuenta en Bitcoin Cash Bol.";
+    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    window.open(url, '_blank');
+}
