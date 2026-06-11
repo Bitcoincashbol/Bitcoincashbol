@@ -51,8 +51,8 @@ function enviarWhatsApp() {
     const nombre = document.getElementById('nombreUsuario').innerText;
     const saldo = document.getElementById('usdDisplay').innerText;
     const telefono = "59177827866";
-    const mensaje = "Hola, soy " + nombre + ". Deseo solicitar un retiro de mis fondos actuales (" + saldo + "). ¿Cómo procedo?";
-    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    const mensaje = encodeURIComponent("Hola, soy " + nombre + ". Deseo solicitar un retiro de mis fondos actuales (" + saldo + "). ¿Cómo procedo?");
+    const url = "https://wa.me/" + telefono + "?text=" + mensaje;
     window.open(url, '_blank');
 }
 
@@ -63,7 +63,7 @@ function abrirGraficos() {
 function enviarAyuda() {
     const nombre = document.getElementById('nombreUsuario').innerText;
     const telefono = "59177827866";
-    const mensaje = "Hola, soy " + nombre + ". Necesito ayuda con mi cuenta en Bitcoin Cash Bol.";
-    const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+    const mensaje = encodeURIComponent("Hola, soy " + nombre + ". Necesito ayuda con mi cuenta en Bitcoin Cash Bol.");
+    const url = "https://wa.me/" + telefono + "?text=" + mensaje;
     window.open(url, '_blank');
 }
