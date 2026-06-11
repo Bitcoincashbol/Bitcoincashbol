@@ -57,5 +57,5 @@ function enviarWhatsApp() {
 }
 
 function abrirGraficos() {
-    window.open("https://www.tradingview.com/chart/?symbol=BITSTAMP:BTCUSD", "_blank");
+    window.open("https://es.tradingview.com/chart/bOWsNnsG/", "_blank");
 }
