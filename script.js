@@ -67,11 +67,3 @@ function enviarAyuda() {
     const url = "https://wa.me/" + telefono + "?text=" + mensaje;
     window.open(url, '_blank');
 }
-
-function enviarOperar() {
-    const nombre = document.getElementById('nombreUsuario').innerText;
-    const telefono = "59177827866";
-    const mensaje = encodeURIComponent("Hola, soy " + nombre + ". Quiero realizar una operación.");
-    const url = "https://wa.me/" + telefono + "?text=" + mensaje;
-    window.open(url, '_blank');
-}
