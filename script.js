@@ -55,3 +55,7 @@ function enviarWhatsApp() {
     const url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
     window.open(url, '_blank');
 }
+
+function abrirGraficos() {
+    window.open("https://www.tradingview.com/chart/?symbol=BITSTAMP:BTCUSD", "_blank");
+}
